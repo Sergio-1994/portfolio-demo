@@ -1,0 +1,29 @@
+.title {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  margin: 1em 0;
+  color: #fff;
+}
+
+.title::before {
+  content: attr(data-number);
+  font-size: 0.7em;
+  color: var(--green);
+  align-self: end;
+  margin-right: 0.5em;
+  margin-bottom: 0.1em;
+}
+
+.title::after {
+  content: '';
+  display: block;
+  position: relative;
+  top: 2px;
+  left: 8px;
+  width: calc(100% - 8px);
+  height: 0.5px;
+  //background-color: rgb(255 255 255 / 0.8);
+  background-color: var(--lightest-navy);
+}

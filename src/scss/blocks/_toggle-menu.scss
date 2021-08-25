@@ -1,0 +1,48 @@
+.toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  padding: 0.8em;
+  background-color: transparent;
+}
+
+.toggle__bar {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+.toggle__bar::before,
+.toggle__bar::after {
+  content: '';
+  position: absolute;
+  right: 2px;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  transform-origin: center;
+  transition: transform 0.3s;
+}
+
+.toggle__bar::before {
+  transform: translate(0, -10px) scaleX(1.2);
+}
+
+.toggle__bar::after {
+  transform: translate(4px, 10px) scaleX(0.8);
+}
+
+.toggle__bar.active {
+  background-color: transparent;
+}
+.toggle__bar.active::before {
+  transform: translateY(0) rotate(-45deg) scaleX(1);
+}
+.toggle__bar.active::after {
+  transform: translateY(0) rotate(45deg) scaleX(1);
+}
